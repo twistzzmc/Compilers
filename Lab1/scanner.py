@@ -37,20 +37,20 @@ def t_ID(t):
     return t
 
 
-def t_INT(t):
-    r'\d+'
-    t.value = int(t.value)
-    return t
-
-
 def t_FLOAT(t):
     r'\d*((\d\.|\.\d)\d*([Ee][+-]?\d+)?|\d([Ee][+-]?\d+))'
     t.value = float(t.value)
     return t
 
 
+def t_INT(t):
+    r'\d+'
+    t.value = int(t.value)
+    return t
+
+
 def t_STRING(t):
-    r'"\S*"'
+    r'"([^"\\]|\\.)*"'
     return t
 
 
