@@ -27,6 +27,12 @@ class TreePrinter:
     def printTree(self, indent=0):
         raise Exception("An error has occured!")
 
+    #  _i - zmienna, dzięki "_" python wie, że nie będzie używana
+    #  indent - liczba tabulacji czyli jak daleko jesteśmy w drzewie, jak w funkcji odpalamy printTree innej
+    #       klasy to z indent + 1
+    #  Po tabulacji printujemy co mamy printować, na przykład wartość float'a i ewentualnie coś innego
+    #  (zobacz if, tam najlepiej widać)
+
     @addToClass(AST.FloatNum)
     def printTree(self, indent=0):
         for _i in range(indent):
