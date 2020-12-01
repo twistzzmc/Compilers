@@ -12,7 +12,7 @@ tokens = ['ID', 'EQ', 'NEQ', 'LE', 'GE', 'M_TRANSPOSE', 'M_ADD', 'M_SUB', 'M_MUL
           'M_DIV', 'A_ADD', 'A_SUB', 'A_MUL', 'A_DIV', 'INT', 'FLOAT', 'STRING'] \
          + list(reserved.values())
 
-# tokens = ('TRANSPOSE', 'M_ADD', 'M_SUB', 'M_MUL', 'M_DIV', 'A_ADD', 'A_SUB', 'A_MUL', 'A_DIV', 'GE', 'LE', 'EQ', 'NEQ',
+# tokens = ('M_TRANSPOSE', 'M_ADD', 'M_SUB', 'M_MUL', 'M_DIV', 'A_ADD', 'A_SUB', 'A_MUL', 'A_DIV', 'GE', 'LE', 'EQ', 'NEQ',
 #           'IF', 'FOR', 'ELSE', 'WHILE', 'BREAK', 'RETURN', 'CONTINUE', 'EYE', 'ZEROS', 'ONES', 'PRINT', 'ID',
 #           'FLOAT', 'INT', 'STRING')
 #
@@ -34,13 +34,13 @@ t_M_SUB = r'\.-'
 t_M_MUL = r'\.\*'
 t_M_DIV = r'\./'
 
-t_TRANSPOSE = r'\''
+t_M_TRANSPOSE = r'\''
 
 
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
-    # t.type = reserved.get(t.value, 'ID')    # Check for reserved words
-    t.type = t.value.upper() if t.value in reserved else 'ID'  # Check for reserved words
+    t.type = reserved.get(t.value, 'ID')    # Check for reserved words
+    # t.type = t.value.upper() if t.value in reserved else 'ID'  # Check for reserved words
     return t
 
 

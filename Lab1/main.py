@@ -1,8 +1,6 @@
 import sys
-# import ply.lex as lex
-import scanner  # scanner.py is a file you create, (it is not an external library)
+import scanner
 
-sys.path.append('..')
 
 if __name__ == '__main__':
 
