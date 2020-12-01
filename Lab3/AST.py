@@ -20,7 +20,7 @@ class Variable(Node):
         self.name = name
 
 
-#  Operatory typu +, -, M_ADD itd.
+#  Operatory typu +, -, M_ADD itd. gdzie left to lewa strona przed operatorem, right to prawa strona po operatorze
 class BinExpr(Node):
     def __init__(self, op, left, right):
         self.op = op
